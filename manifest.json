@@ -6,7 +6,8 @@
   "content_scripts": [
     {
       "matches": ["https://portal.it-chiba.ac.jp/*"],  
-      "css": ["newstyle.css"]
+      "css": ["newstyle.css"],
+      "js": ["inject-style.js"]
     }
   ],
   "web_accessible_resources": [

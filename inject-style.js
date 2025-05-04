@@ -1,0 +1,12 @@
+const style = document.createElement("style");
+style.textContent = `
+.ui-dialog-titlebar-close .ui-icon-closethick {
+  background-image: url("${chrome.runtime.getURL("images/close-icon.png")}") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+`;
+document.head.appendChild(style);
