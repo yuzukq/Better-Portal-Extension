@@ -14,6 +14,7 @@ function applyStyle(size) {
   if (existingStyle) {
     existingStyle.remove();
   }
+
   const style = document.createElement('style');
   style.id = "custom-close-style";
   style.textContent = `
@@ -21,6 +22,24 @@ function applyStyle(size) {
       width: ${size}px !important;
       height: ${size}px !important;
       background-image: url("${chrome.runtime.getURL("images/close-icon.png")}") !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+    }
+
+    .ui-dialog-titlebar-maximize .ui-icon-extlink {
+      width: ${size}px !important;
+      height: ${size}px !important;
+      background-image: url("${chrome.runtime.getURL("images/expansion-icon.png")}") !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+    }
+
+    .ui-dialog-titlebar-maximize .ui-icon-newwin {
+      width: ${size}px !important;
+      height: ${size}px !important;
+      background-image: url("${chrome.runtime.getURL("images/minimize-icon.png")}") !important;
       background-size: contain !important;
       background-repeat: no-repeat !important;
       background-position: center center !important;

@@ -1,0 +1,86 @@
+@keyframes radio-select {
+  0% {
+    transform: scale(0);
+  }
+  65% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.container {
+  max-width: 240px;
+  margin: auto;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #555;
+}
+
+label {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  background: #fff;
+  transition: border-color 0.3s;
+}
+
+.inside {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #555;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked + .outside {
+  border-color: #555;
+}
+
+input[type="radio"]:checked + .outside .inside {
+  animation: radio-select 0.2s linear;
+  transform: scale(1);
+}
+
+label:hover .outside {
+  border-color: #555;
+}
