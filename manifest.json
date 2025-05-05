@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Better Portal Extension",
+  "name": "CIT-Better Portal Extension",
   "version": "1.0",
-  "description": "Make the portal easier to use.",
+  "description": "CITポータルのUIを改善する拡張機能です．ver1.0ではシラバス照会等のウィンドウ表示時の最小化ボタン，閉じるボタンを任意のサイズに変更できる機能を実装しています．他機能に関しても順次実装予定です．",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html"
@@ -18,5 +18,11 @@
       "resources": ["images/close-icon.png", "images/expansion-icon.png", "images/minimize-icon.png"],
       "matches": ["https://portal.it-chiba.ac.jp/*"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "author": "Yuzu"
 }
