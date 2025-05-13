@@ -1,87 +1,80 @@
+:root {
+  --canvas: rgba(255, 255, 255, 0.55); 
+  --border: rgba(255, 255, 255, 0.30); 
+  --text:   #1C1C1E;                   
+  --muted:  #6C6C70;
+  --accent: #0A84FF;                   
+  --radius: 20px;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background: #8c97a371;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #F2F2F7;          
   margin: 0;
-  padding: 10px;
-  min-width: 140px;
+  padding: 16px;
+  min-width: 180px;
 }
 
 .container {
-  background-color: #eeeeee87;
-  border-radius: 16px;
-  padding: 10px;
-  box-shadow: 0 8px 16px rgba(207, 132, 132, 0.1);
+  backdrop-filter: blur(24px) saturate(180%);
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+  padding: 24px 20px;
   text-align: center;
 }
 
 h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #555;
+  margin: 0 0 18px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
 }
 
-label {
+label.option {
   display: flex;
-  align-items: center; 
-  gap: 6px; /* ボタンとテキストの間隔 */
-  margin-bottom: 8px;
-  font-size: 18px;
-  color: #444;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 17px;
+  color: var(--text);
   cursor: pointer;
+  user-select: none;
+}
+label.option:last-child { margin-bottom: 0; }
+
+/* --- カスタムラジオ --- */
+input[type="radio"]{
+  appearance:none;
+  position:relative;          
+  width:20px;height:20px;
+  border:2px solid var(--muted);
+  border-radius:50%;
+  display:inline-block; 
+  /* display:grid; */
+  vertical-align:middle;
+  transition:border-color .25s ease;
 }
 
-input[type="radio"] {
-  opacity: 0;
-  position: absolute;
+input[type="radio"]::before{
+  content:"";
+  position:absolute;          
+  top:50%;left:50%;
+  width:10px;height:10px;  /*10,10*/     
+  border-radius:50%;
+  background:var(--accent);
+  transform:translate(-50%,-50%) scale(0); /*中心に配置*/
+  transition:transform .2s ease;
 }
 
-.outside {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #888;
-  border-radius: 50%;
-  background: #fff;
-  transition: border-color 0.3s;
+input[type="radio"]:checked {
+  border-color: var(--accent);
+}
+input[type="radio"]:checked::before {
+  transform: translate(-50%,-50%) scale(1);
 }
 
-.inside {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #555;
-  transform: scale(0);
-  transition: transform 0.2s ease-in-out;
-}
-
-input[type="radio"]:checked + .outside {
-  border-color: #555;
-}
-
-input[type="radio"]:checked + .outside .inside {
-  animation: radio-select 0.2s linear;
-  transform: scale(1);
-}
-
-label:hover .outside {
-  border-color: #555;
-}
-
-@keyframes radio-select {
-  0% {
-    transform: scale(0);
-  }
-  65% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+label.option:hover input[type="radio"] {
+  border-color: var(--accent);
 }
