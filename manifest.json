@@ -1,5 +1,5 @@
 {
-  "manifest_version": 4,
+  "manifest_version": 3,
   "name": "CIT-Better Portal Extension",
   "version": "1.2",
   "description": "CITポータルのUIを改善する拡張機能です．ver1.0ではシラバス照会等のウィンドウ表示時の最小化ボタン，閉じるボタンを任意のサイズに変更できる機能を実装しています．他機能に関しても順次実装予定です．バージョン1.2では外部からCITポータルへのショートカットボタンの追加，頻繁に利用する機能へのショートカットを設けました．",
