@@ -9,7 +9,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
   }
 });
 
-function applyStyle(size) {
+const  applyStyle = (size) => {
   const existingStyle = document.getElementById("custom-close-style");
   if (existingStyle) {
     existingStyle.remove();
