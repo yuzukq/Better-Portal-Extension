@@ -1,31 +1,15 @@
-let currentLayer = 'shortcut';
+// レイヤー切り替え関連
+const layers = ['shortcut', 'icon'];
+let currentIndex = 0;
 
-// レイヤー切り替えメソッド
 const switchLayer = (direction) => {
-  const iconLayer = document.getElementById('icon-select-mode');
-  const shortcutLayer = document.getElementById('shortcut-select-mode');
+  const layerElements = layers.map(id => document.getElementById(`${id}-select-mode`));
+  layerElements[currentIndex].style.display = 'none';
   
-  if (direction === 'left') {
-    if (currentLayer === 'icon') {
-      iconLayer.style.display = 'none';
-      shortcutLayer.style.display = 'block';
-      currentLayer = 'shortcut';
-    } else {
-      shortcutLayer.style.display = 'none';
-      iconLayer.style.display = 'block';
-      currentLayer = 'icon';
-    }
-  } else if (direction === 'right') {
-    if (currentLayer === 'shortcut') {
-      shortcutLayer.style.display = 'none';
-      iconLayer.style.display = 'block';
-      currentLayer = 'icon';
-    } else {
-      iconLayer.style.display = 'none';
-      shortcutLayer.style.display = 'block';
-      currentLayer = 'shortcut';
-    }
+  if (direction === 'left' || direction === 'right') {
+    currentIndex = (currentIndex + (direction === 'right' ? 1 : layers.length - 1)) % layers.length;
   }
+  layerElements[currentIndex].style.display = 'block';
 }
 
 // イベント駆動関連
