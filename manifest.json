@@ -12,6 +12,13 @@
       "matches": ["https://portal.it-chiba.ac.jp/*"],
       "js": ["content.js"]
     }
+    ,
+    {
+      "matches": ["https://cit.manaba.jp/ct/*"],
+      "js": ["manaba-dark.js"],
+      "css": ["manaba-dark.css"],
+      "run_at": "document_start"
+    }
   ],
   "web_accessible_resources": [
     {

@@ -1,0 +1,248 @@
+/*itsu-dev/modern-manaba から継承してきたが，クラス名が異なるため当たってない個所多々 */
+
+body[theme="dark"] {
+  --color-text: #e6e6e6;
+  --color-background-main: #121212;
+  --color-background-theme: #272727;
+  --color-title-2: #dcedc8;
+  --color-title-3: #aed681;
+  --color-button-background: #7eac4a;
+  --color-button-background-hover: #6f9841;
+  --color-text-disabled: #c1c1c1;
+  --color-card-shadow: transparent;
+  --color-card-background: #212121;
+  --color-card-border-white: #212121;
+  --color-card-background-alert: #cf6679;
+  --color-card-border-alert: #cf6679;
+  --color-card-background-memo: #fff176;
+  --color-card-border-memo: #fff176;
+  --color-card-border-description: #272727;
+  --color-card-contents-background: #2c2c2c;
+  --color-card-contents-border: #2c2c2c;
+  --color-menubar-background: #272727;
+  --color-menubar-hover: #66bb6a;
+  --color-table-grade-bar: #2e7d32;
+  --color-table-border: #212121;
+  --color-table-border-2: #212121;
+  --color-unreadcount-background: #cf6679;
+  --color-default-font: #ffffff;
+  --color-link: #baddf9;
+
+  color: var(--color-text) !important;
+  background: var(--color-background-main) !important;
+}
+
+/* テキスト色系*/
+body[theme="dark"] :where(p, span, div, li, dt, dd, small, label, strong, em, code, pre, td, th) {
+  color: var(--color-text) !important;
+}
+/* 表 */
+body[theme="dark"] table,
+body[theme="dark"] table td,
+body[theme="dark"] table th {
+  color: var(--color-text) !important;
+}
+/* フォーム系（背景と文字色） */
+body[theme="dark"] input:not([type="button"]):not([type="submit"]),
+body[theme="dark"] select,
+body[theme="dark"] textarea {
+  background-color: var(--color-card-contents-background) !important;
+  color: var(--color-text) !important;
+  border-color: #3a3a3a !important;
+}
+
+/* 埋め込みリンク */
+body[theme="dark"] a {
+  color: var(--color-link) !important;
+  background-color: transparent !important;
+}
+
+/* ======================================
+   ヘッダー (一部ページで漏れあり，TODO修正)
+   ====================================== */
+/* 全体ヘッダーの背景と文字色 */
+body[theme="dark"] #header {
+  background: var(--color-menubar-background) !important;
+  color: var(--color-default-font) !important;
+  border-bottom: 1px solid #333 !important;
+}
+/* ヘッダー内のリンク色 */
+body[theme="dark"] #header a { color: var(--color-default-font) !important; }
+
+body[theme="dark"] .responsive-myheader,
+body[theme="dark"] .responsive-header-menu,
+body[theme="dark"] #myheader,
+body[theme="dark"] #orgheader { 
+  background: var(--color-menubar-background) !important; 
+  color: var(--color-default-font) !important;
+}
+/* ハンバーガーメニュー内項目 */
+body[theme="dark"] .responsive-header-menu li a {
+  color: var(--color-default-font) !important;
+  background: transparent !important;
+}
+body[theme="dark"] .responsive-header-menu li.current a,
+body[theme="dark"] .responsive-header-menu li a:hover {
+  background: var(--color-menubar-hover) !important;
+  color: #fff !important;
+}
+/* hr の白残り回避 */
+body[theme="dark"] #header hr { border-color: #3a3a3a !important; background: #3a3a3a !important; color: #3a3a3a !important; }
+
+/* ======================================
+   ナビゲーション マイページ，コース，ポートフォリオやらのボタンのとこ．
+   ====================================== */
+/* ボタン自体が背景付きの画像素材になっていてスタイル新たない問題あり */
+body[theme="dark"] #mynavi {
+  background: var(--color-menubar-background) !important;
+  background-image: none !important;
+  color: var(--color-default-font) !important;
+}
+
+body[theme="dark"] .responsive-mynavi {
+  background: var(--color-menubar-background) !important;
+  color: var(--color-default-font) !important;
+}
+body[theme="dark"] .responsive-mynavi .top-menu ul li {
+  background-color: var(--color-background-theme) !important;
+  border-bottom-color: #3a3a3a !important;
+}
+/* current/hoverのアクセント */
+body[theme="dark"] .responsive-mynavi .top-menu ul li.current,
+body[theme="dark"] .responsive-mynavi .top-menu ul li a:hover {
+  background-color: var(--color-menubar-hover) !important;
+  border-bottom-color: var(--color-menubar-hover) !important;
+}
+/* リンク文字色 */
+body[theme="dark"] .responsive-mynavi .top-menu ul li a { color: var(--color-default-font) !important; }
+
+/* ======================================
+   コンテナ/カード類
+   ====================================== */
+body[theme="dark"] .pagebody,
+body[theme="dark"] .content-body,
+body[theme="dark"] .contentbody-left,
+body[theme="dark"] .contentbody-right,
+body[theme="dark"] .contentbody-l,
+body[theme="dark"] .contentbody-s,
+body[theme="dark"] .my-infolist,
+body[theme="dark"] .info-list-card,
+body[theme="dark"] .info-list,
+body[theme="dark"] .info-list-cardl,
+body[theme="dark"] .info-list-cardr,
+body[theme="dark"] .top-contents-list,
+body[theme="dark"] .groupnews-msg,
+body[theme="dark"] .articlebody,
+body[theme="dark"] div.form,
+body[theme="dark"] .description,
+body[theme="dark"] .contents-card,
+body[theme="dark"] .navigator,
+body[theme="dark"] .button-switchview,
+body[theme="dark"] .msg-body,
+body[theme="dark"] .reporttext-title,
+body[theme="dark"] .reporttext-body {
+  background: var(--color-card-background) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-card-border-white) !important;
+}
+
+/* 見出し/タイトル色 */
+body[theme="dark"] .my-infolist-header h2,
+body[theme="dark"] .info-list-card-header h2,
+body[theme="dark"] .top-contents-list-header h2,
+body[theme="dark"] .msg-body h2,
+body[theme="dark"] .contentbody-l h1,
+body[theme="dark"] .contentbody-s h1,
+body[theme="dark"] .msg h2,
+body[theme="dark"] div.articlebody .pagetitle,
+body[theme="dark"] .reporttext-title,
+body[theme="dark"] h1.contents a {
+  color: var(--color-title-2) !important;
+}
+
+/* ディスクリプション（「現在、自己登録期間中…」等） */
+body[theme="dark"] .description {
+  background: var(--color-background-theme) !important;
+  border-color: var(--color-card-border-description) !important;
+}
+
+/* アラート/メモ */
+body[theme="dark"] .alertlist {
+  background: var(--color-card-background-alert) !important;
+  border-color: var(--color-card-border-alert) !important;
+}
+body[theme="dark"] .alertlist a,
+body[theme="dark"] .alertlist span.unread { color: #ffffff !important; }
+
+body[theme="dark"] .memo0 {
+  background: var(--color-card-background-memo) !important;
+  border-color: var(--color-card-border-memo) !important;
+}
+
+/* ======================================
+   ボタン（色のみ）そのまま移植してきたがこれらは当たってない
+   ====================================== */
+body[theme="dark"] button,
+body[theme="dark"] input[type="submit"],
+body[theme="dark"] input[type="button"],
+body[theme="dark"] .manabaOriginalButton {
+  background-color: var(--color-button-background) !important;
+  background-image: none !important;
+  color: #f0f0f0 !important;
+  border: none !important;
+}
+body[theme="dark"] button:hover,
+body[theme="dark"] input[type="submit"]:hover,
+body[theme="dark"] input[type="button"]:hover,
+body[theme="dark"] .manabaOriginalButton:hover {
+  background-color: var(--color-button-background-hover) !important;
+}
+
+/* ======================================
+   テーブル（ストライプ/ボーダー/ホバー） 曜日別表示のフィルタで当たってないので確認
+   ====================================== */
+body[theme="dark"] tr.row0 { background: var(--color-card-background) !important; }
+body[theme="dark"] table tr:nth-child(even) { background: var(--color-background-theme) !important; }
+body[theme="dark"] table tr:nth-child(odd)  { background: var(--color-card-background) !important; }
+
+body[theme="dark"] table.stdlist tr td,
+body[theme="dark"] table.stdlist tr th {
+  border-color: var(--color-table-border) !important;
+  border-style: dotted !important;
+  border-width: 1px !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+body[theme="dark"] table.stdlist tr:hover td,
+body[theme="dark"] table.stdlist tr:hover th {
+  background-color: var(--color-background-main) !important;
+}
+/*　テーブル内のhover */
+body[theme="dark"] table tr:hover th,
+body[theme="dark"] table tr:hover td {
+  background-color: var(--color-background-main) !important;
+}
+
+/* 提出期限表示 */
+body[theme="dark"] table.stdlist tr.seven-days-before { background-color: #385638 !important; }
+body[theme="dark"] table.stdlist tr.three-days-before { background-color: #636228 !important; }
+body[theme="dark"] table.stdlist tr.one-day-before { background-color: #632828 !important; }
+
+
+/* ======================================
+   その他細部
+   ====================================== */
+/* 未読バッジ */
+body[theme="dark"] span.my-unreadcount {
+  background-color: var(--color-unreadcount-background) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* hover時のリンク背景など（coursecard等） */
+body[theme="dark"] .pagebody .section .coursecard:hover a { background-color: transparent !important; }
+body[theme="dark"] .course-card-title a { background-color: transparent !important; }
+/* コースカード自体の hover */
+body[theme="dark"] .pagebody .section .coursecard:hover { background-color: var(--color-background-main) !important; }

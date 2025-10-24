@@ -1,5 +1,5 @@
 // レイヤー切り替え関連
-const layers = ['shortcut', 'icon'];
+const layers = ['shortcut', 'icon', 'manaba'];
 let currentIndex = 0;
 
 const switchLayer = (direction) => {
@@ -26,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
   let windowPosition = 'width=500,height=1000,left=200,top=200';
   gakunenrekiButton.addEventListener('click', () => window.open("https://kmsk.is.it-chiba.ac.jp/portal/whole/gakubu/gakunenreki.pdf",'newWindow' ,windowPosition));
   gakubasuButton.addEventListener('click', () => window.open("https://kmsk.is.it-chiba.ac.jp/portal/whole/gakubu/bus_schedule.pdf",'newWindow' ,windowPosition));
+
+  // manaba ダークモード トグルの初期化と保存
+  const manabaToggle = document.getElementById('toggle-manaba-dark');
+  if (manabaToggle) {
+    chrome.storage.sync.get({ manabaDark: false }, (data) => {
+      manabaToggle.checked = !!data.manabaDark;
+    });
+    manabaToggle.addEventListener('change', () => {
+      chrome.storage.sync.set({ manabaDark: manabaToggle.checked });
+    });
+  }
 
   chrome.storage.sync.get('iconSize', (data) => {
     const size = data.iconSize || "36";
