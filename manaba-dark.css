@@ -4,8 +4,8 @@ body[theme="dark"] {
   --color-text: #e6e6e6;
   --color-background-main: #121212;
   --color-background-theme: #272727;
-  --color-title-2: #dcedc8;
-  --color-title-3: #aed681;
+  --color-title-2: #0a0a0a;
+  --color-title-3: #f9f9f9;
   --color-button-background: #7eac4a;
   --color-button-background-hover: #6f9841;
   --color-text-disabled: #c1c1c1;
@@ -121,7 +121,7 @@ body[theme="dark"] .responsive-mynavi .top-menu ul li a { color: var(--color-def
    ====================================== */
 body[theme="dark"] .pagebody,
 body[theme="dark"] .content-body,
-body[theme="dark"] .contentbody-left,
+/* body[theme="dark"] .contentbody-left, */
 body[theme="dark"] .contentbody-right,
 body[theme="dark"] .contentbody-l,
 body[theme="dark"] .contentbody-s,
@@ -214,35 +214,53 @@ body[theme="dark"] table.stdlist tr th {
   border-bottom: none !important;
 }
 
+/* リスト表示のホバー */
 body[theme="dark"] table.stdlist tr:hover td,
 body[theme="dark"] table.stdlist tr:hover th {
   background-color: var(--color-background-main) !important;
 }
-/*　テーブル内のhover */
-body[theme="dark"] table tr:hover th,
-body[theme="dark"] table tr:hover td {
-  background-color: var(--color-background-main) !important;
-}
 
-/* 提出期限表示 */
-body[theme="dark"] table.stdlist tr.seven-days-before { background-color: #385638 !important; }
-body[theme="dark"] table.stdlist tr.three-days-before { background-color: #636228 !important; }
-body[theme="dark"] table.stdlist tr.one-day-before { background-color: #632828 !important; }
+/* サムネイル表示時のカードのホバー） */
+body[theme="dark"] .pagebody .section .coursecard:hover a { background-color: transparent !important; }
+body[theme="dark"] .course-card-title a { background-color: transparent !important; }
+body[theme="dark"] .pagebody .section .coursecard:hover { background-color: var(--color-background-main) !important; }
+
+/* ======================================
+   ページヘッダー (コース等ボタンが背景付き画像の個所は別途画像を用意する)
+   ====================================== */
+body[theme="dark"] .pageheader-course,
+body[theme="dark"] .pageheader-courseV2,
+body[theme="dark"] .pageheader-course-s,
+body[theme="dark"] .pageheader-course-sV2,
+body[theme="dark"] .pageheader-library {
+  background: var(--color-card-background) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-card-border-white) !important;
+}
 
 
 /* ======================================
-   その他細部
+   ユーザページ(ポートフォリオのとこ)（userpage-top）
    ====================================== */
-/* 未読バッジ */
-body[theme="dark"] span.my-unreadcount {
-  background-color: var(--color-unreadcount-background) !important;
-  color: #fff !important;
-  box-shadow: none !important;
-  border: none !important;
+body[theme="dark"] .userpage-top {
+  background: var(--color-card-background) !important;
+  background-image: none !important;
+  color: var(--color-text) !important;
+}
+body[theme="dark"] .userpage-top h3 { color: var(--color-title-2) !important; }
+body[theme="dark"] .userpage-top a { color: var(--color-link) !important; }
+body[theme="dark"] .homecollection .userpage-top {
+  background: var(--color-card-background) !important;
 }
 
-/* hover時のリンク背景など（coursecard等） */
-body[theme="dark"] .pagebody .section .coursecard:hover a { background-color: transparent !important; }
-body[theme="dark"] .course-card-title a { background-color: transparent !important; }
-/* コースカード自体の hover */
-body[theme="dark"] .pagebody .section .coursecard:hover { background-color: var(--color-background-main) !important; }
+/* ======================================
+   info-contents: コースコンテンツ内 テキストは黒
+   ====================================== */
+/* セル自体と内包する代表的なインライン要素を黒に固定 */
+body[theme="dark"] table.contentslist .info-contents,
+body[theme="dark"] .info-contents { color: #000 !important; }
+body[theme="dark"] table.contentslist .info-contents :where(p, span, div, li, dt, dd, small, label, strong, em, code, pre, td, th),
+body[theme="dark"] .info-contents :where(p, span, div, li, dt, dd, small, label, strong, em, code, pre, td, th) { color: #000 !important; }
+/* リンクも黒に */
+body[theme="dark"] table.contentslist .info-contents a,
+body[theme="dark"] .info-contents a { color: #000 !important; }
