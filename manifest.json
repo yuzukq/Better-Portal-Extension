@@ -1,28 +1,32 @@
 {
   "manifest_version": 3,
   "name": "CIT-Better Portal Extension",
-  "version": "1.2",
-  "description": "CITポータルのUIを改善する拡張機能です．ver1.0ではシラバス照会等のウィンドウ表示時の最小化ボタン，閉じるボタンを任意のサイズに変更できる機能を実装しています．他機能に関しても順次実装予定です．バージョン1.2では外部からCITポータルへのショートカットボタンの追加，頻繁に利用する機能へのショートカットを設けました．",
+  "version": "1.3",
+  "description": "CITポータルのUIを改善する拡張機能です．ver1.0ではシラバス照会等のウィンドウ表示時の最小化ボタン，閉じるボタンを任意のサイズに変更できる機能を実装しています．他機能に関しても順次実装予定です．バージョン1.2では外部からCITポータルへのショートカットボタンの追加，頻繁に利用する機能へのショートカットを設けました．バージョン1.3ではManabaの時間割表示ページに時限開始時刻を追加する機能を実装しました．",
   "permissions": ["storage"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "src/popup/popup.html"
   },
   "content_scripts": [
     {
       "matches": ["https://portal.it-chiba.ac.jp/*"],
-      "js": ["content.js"]
+      "js": ["src/content/portal/iconCustomizer.js"]
+    },
+    {
+      "matches": ["https://cit.manaba.jp/*"],
+      "js": ["src/content/manaba/timetableTimestamp.js"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["images/close-icon.png", "images/expansion-icon.png", "images/minimize-icon.png"],
+      "resources": ["assets/images/close-icon.png", "assets/images/expansion-icon.png", "assets/images/minimize-icon.png"],
       "matches": ["https://portal.it-chiba.ac.jp/*"]
     }
   ],
   "icons": {
-    "16": "icon/icon16.png",
-    "48": "icon/icon48.png",
-    "128": "icon/icon128.png"
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
   },
   "author": "Yuzu"
 }
