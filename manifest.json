@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://portal.it-chiba.ac.jp/*"],
+      "matches": ["https://portal.chibatech.ac.jp/*"],
       "js": ["src/content/portal/iconCustomizer.js"]
     },
     {
@@ -26,7 +26,7 @@
   "web_accessible_resources": [
     {
       "resources": ["assets/images/close-icon.png", "assets/images/expansion-icon.png", "assets/images/minimize-icon.png"],
-      "matches": ["https://portal.it-chiba.ac.jp/*"]
+      "matches": ["https://portal.chibatech.ac.jp/*"]
     }
   ],
   "icons": {
